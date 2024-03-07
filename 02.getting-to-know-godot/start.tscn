@@ -9,28 +9,31 @@
 [ext_resource type="PackedScene" uid="uid://cq0mmphkbrvmm" path="res://levels/rooms/room_c.tscn" id="7_l1p7y"]
 
 [node name="Start" type="Node2D"]
+position = Vector2(256, 0)
 script = ExtResource("2")
 
 [node name="Bridges" type="TileMap" parent="."]
 tile_set = ExtResource("2_vnf5n")
 format = 2
 layer_0/name = "Bridges"
+layer_0/tile_data = PackedInt32Array(327695, 65536, 1, 327696, 0, 1, 327697, 0, 1, 327698, 196608, 0, 262162, 65536, 0, 262163, 131072, 1, -65509, 262144, 1, -131046, 131072, 0, -196582, 196608, 1, -262118, 196608, 1, -327654, 0, 0, -327655, 131072, 0, -131045, 131072, 1, -393191, 196608, 1, -458727, 327680, 1)
 metadata/_edit_lock_ = true
 
 [node name="InvisibleWalls" type="TileMap" parent="."]
 tile_set = ExtResource("3")
 format = 2
 layer_0/name = "Invisible walls"
+layer_0/tile_data = PackedInt32Array(262160, 0, 0, 262161, 0, 0, 196624, 0, 0, 196626, 0, 0, 393232, 0, 0, 393233, 0, 0, 393234, 0, 0, -196581, 0, 0, -196580, 0, 0, -131044, 0, 0, -262117, 0, 0, -327653, 0, 0, -393189, 0, 0, -393190, 0, 0, -393192, 0, 0, -327656, 0, 0, -262120, 0, 0, -262119, 0, 0, -196583, 0, 0, -131047, 0, 0)
 metadata/_edit_lock_ = true
 
 [node name="Player" parent="." instance=ExtResource("4_qvh4w")]
 position = Vector2(768, 384)
 
 [node name="RoomA" parent="." instance=ExtResource("5_x5dxq")]
-position = Vector2(256, 128)
+position = Vector2(512, 128)
 
 [node name="RoomB" parent="." instance=ExtResource("6_1v2sv")]
-position = Vector2(-1408, 256)
+position = Vector2(2560, 0)
 
 [node name="RoomC" parent="." instance=ExtResource("7_l1p7y")]
-position = Vector2(-1280, -1536)
+position = Vector2(2048, -2304)
