@@ -1,13 +1,13 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene load_steps=4 format=3 uid="uid://ljfjeibeherr"]
 
-[ext_resource type="Script" path="res://practices/L6.P2.coins_and_energy_packs/collectible.gd" id="1_xx3ac"]
-[ext_resource type="Texture2D" path="res://assets/practice_assets/energy_pack.png" id="2_rcrnv"]
+[ext_resource type="Script" path="res://practices/L6.P2.coins_and_energy_packs/collectible.gd" id="1_j184d"]
+[ext_resource type="Texture2D" uid="uid://bdkl4qmqe0suw" path="res://assets/practice_assets/energy_pack.png" id="2_rcrnv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gmkso"]
 radius = 57.1402
 
-[node name="EnergyPack" type="Area2D"]
-script = ExtResource("1_xx3ac")
+[node name="EnergyPack" type="Area2D" groups=["energy"]]
+script = ExtResource("1_j184d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_rcrnv")
