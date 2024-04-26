@@ -1,16 +1,11 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://c2iljhc01h2vq"]
 
-[ext_resource type="PackedScene" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.tscn" id="1_biewv"]
-[ext_resource type="Script" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.gd" id="2_mo74b"]
+[ext_resource type="PackedScene" uid="uid://b0163h731vxe4" path="res://practices/L3.P1.hover_the_balloon/balloon_hover.tscn" id="1_biewv"]
 
 [node name="HoverTheBalloon" type="Node2D"]
 metadata/_edit_horizontal_guides_ = []
 
-[node name="BalloonHover" type="Area2D" parent="." instance=ExtResource("1_biewv")]
-position = Vector2(960, 540)
-collision_layer = 2
-collision_mask = 0
-script = ExtResource("2_mo74b")
+[node name="BalloonHover" parent="." instance=ExtResource("1_biewv")]
 
 [node name="ExtraVisuals" type="Node" parent="."]
 
