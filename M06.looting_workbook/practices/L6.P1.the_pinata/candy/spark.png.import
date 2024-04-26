@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkt3vi0kvo1md"
-path="res://.godot/imported/spark.png-0b81c62970eb699c87e4a717429ad5ed.ctex"
+path="res://.godot/imported/spark.png-9730111d1dc0fea266495d6fb85d3b02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gdquest_practice_framework/practice_solutions/L6.P1.the_pinata/candy/spark.png"
-dest_files=["res://.godot/imported/spark.png-0b81c62970eb699c87e4a717429ad5ed.ctex"]
+source_file="res://practices/L6.P1.the_pinata/candy/spark.png"
+dest_files=["res://.godot/imported/spark.png-9730111d1dc0fea266495d6fb85d3b02.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwbwn5t4dfiib"
-path="res://.godot/imported/wall.png-ef443288573b53ad0fdc0994e4663536.ctex"
+path="res://.godot/imported/wall.png-fa88ac60c1cfac47440e4ec38f79a82b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gdquest_practice_framework/practice_solutions/L5.P1.open_the_door/wall.png"
-dest_files=["res://.godot/imported/wall.png-ef443288573b53ad0fdc0994e4663536.ctex"]
+source_file="res://practices/L5.P1.open_the_door/wall.png"
+dest_files=["res://.godot/imported/wall.png-fa88ac60c1cfac47440e4ec38f79a82b.ctex"]
 
 [params]
 

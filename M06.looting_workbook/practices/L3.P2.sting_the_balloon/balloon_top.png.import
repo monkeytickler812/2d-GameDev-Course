@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bn6jrawnf5ijj"
-path="res://.godot/imported/balloon_top.png-1ed04346ee0bb36ffebdd1c494064c6a.ctex"
+path="res://.godot/imported/balloon_top.png-4b0578f4ff3829b16f6d49cceaf6f478.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gdquest_practice_framework/practice_solutions/L3.P2.sting_the_balloon/balloon_top.png"
-dest_files=["res://.godot/imported/balloon_top.png-1ed04346ee0bb36ffebdd1c494064c6a.ctex"]
+source_file="res://practices/L3.P2.sting_the_balloon/balloon_top.png"
+dest_files=["res://.godot/imported/balloon_top.png-4b0578f4ff3829b16f6d49cceaf6f478.ctex"]
 
 [params]
 

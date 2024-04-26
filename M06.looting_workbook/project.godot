@@ -1,12 +1,25 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
 config_version=5
 
 [application]
 
 config/name="M6. Looting (Workbook)"
+config/tags=PackedStringArray("workbook")
 run/main_scene="res://lessons/mini_dungeon.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon_looting.png"
-config/tags=PackedStringArray("workbook")
+
+[autoload]
+
+UITestPanel="*res://addons/gdquest_practice_framework/tester/ui_test_panel.tscn"
+Metadata="*res://addons/gdquest_practice_framework/practice_solutions/metadata.gd"
 
 [display]
 
@@ -16,6 +29,10 @@ window/size/mode=2
 window/size/window_width_override=1152
 window/size/window_height_override=648
 window/stretch/mode="canvas_items"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdquest_practice_framework/plugin.cfg")
 
 [input]
 

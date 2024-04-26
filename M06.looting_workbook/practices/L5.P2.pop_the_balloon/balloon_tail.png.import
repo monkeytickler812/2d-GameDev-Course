@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnfm17ejohcbd"
-path="res://.godot/imported/balloon_tail.png-508e70ef37c06071393ba6881bd63274.ctex"
+path="res://.godot/imported/balloon_tail.png-fbc42db218e99e728251185690d8aa37.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/gdquest_practice_framework/practice_solutions/L5.P2.pop_the_balloon/balloon_tail.png"
-dest_files=["res://.godot/imported/balloon_tail.png-508e70ef37c06071393ba6881bd63274.ctex"]
+source_file="res://practices/L5.P2.pop_the_balloon/balloon_tail.png"
+dest_files=["res://.godot/imported/balloon_tail.png-fbc42db218e99e728251185690d8aa37.ctex"]
 
 [params]
 
