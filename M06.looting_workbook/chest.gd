@@ -1,6 +1,8 @@
 extends Area2D
 
+
 @onready var canvas_group: CanvasGroup = $CanvasGroup
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
@@ -17,3 +19,18 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	var tween := create_tween()
 	tween.tween_method(set_outline_thickness, 6.0, 3.0, 0.08)
+
+func _input_event(viewport: Node, event: InputEvent, shape_index: int):
+	var event_is_mouse_click: bool = (
+		event is InputEventMouseButton and
+		event.button_index == MOUSE_BUTTON_LEFT and
+		event.is_pressed()
+	)
+
+	if event_is_mouse_click:
+		open()
+
+func open() -> void:
+	animation_player.play("open")
+
+	input_pickable = false
