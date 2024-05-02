@@ -1,9 +1,9 @@
-[gd_scene load_steps=6 format=3]
+[gd_scene load_steps=6 format=3 uid="uid://bcw47s1ishqk3"]
 
-[ext_resource type="Script" path="res://practices/L6.P1.the_pinata/balloon_pinata.gd" id="1_w1uds"]
-[ext_resource type="Material" path="res://practices/L6.P1.the_pinata/material.tres" id="2_h718a"]
-[ext_resource type="Texture2D" path="res://practices/L6.P1.the_pinata/balloon_tail.png" id="3_8kwgq"]
-[ext_resource type="Texture2D" path="res://practices/L6.P1.the_pinata/balloon_top.png" id="4_5cass"]
+[ext_resource type="Script" path="res://practices/L6.P1.the_pinata/balloon_pinata.gd" id="1_o8nuf"]
+[ext_resource type="Material" uid="uid://dwoekm186ke5c" path="res://practices/L6.P1.the_pinata/material.tres" id="2_h718a"]
+[ext_resource type="Texture2D" uid="uid://ypt6hxuqpeen" path="res://practices/L6.P1.the_pinata/balloon_tail.png" id="3_8kwgq"]
+[ext_resource type="Texture2D" uid="uid://c5wl76sq80jjm" path="res://practices/L6.P1.the_pinata/balloon_top.png" id="4_5cass"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xb8xq"]
 radius = 47.0
@@ -13,7 +13,7 @@ height = 166.0
 position = Vector2(960, 540)
 collision_layer = 2
 collision_mask = 0
-script = ExtResource("1_w1uds")
+script = ExtResource("1_o8nuf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)

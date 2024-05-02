@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3]
+[gd_scene load_steps=3 format=3 uid="uid://c2reovkp2haft"]
 
-[ext_resource type="Script" path="res://practices/L6.P1.the_pinata/candy/candy.gd" id="1_mis5w"]
-[ext_resource type="Texture2D" path="res://practices/L6.P1.the_pinata/candy/candy.png" id="2_2fb1e"]
+[ext_resource type="Script" path="res://practices/L6.P1.the_pinata/candy/candy.gd" id="1_3rej8"]
+[ext_resource type="Texture2D" uid="uid://dnf1lp40ouk7k" path="res://practices/L6.P1.the_pinata/candy/candy.png" id="2_2fb1e"]
 
 [node name="Candy" type="Node2D"]
-script = ExtResource("1_mis5w")
+script = ExtResource("1_3rej8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
