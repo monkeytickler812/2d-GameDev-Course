@@ -1,12 +1,71 @@
-[gd_scene load_steps=9 format=3 uid="uid://chprvwfixox2y"]
+[gd_scene load_steps=20 format=3 uid="uid://chprvwfixox2y"]
 
 [ext_resource type="Theme" uid="uid://cxm3e18skt2lj" path="res://lessons/assets/main_theme.tres" id="1_frglg"]
 [ext_resource type="Script" path="res://lessons/dialogue.gd" id="2_n1q1t"]
 [ext_resource type="Shader" path="res://assets/sliding_background.gdshader" id="3_3nfwl"]
+[ext_resource type="Script" path="res://lessons/dialogue_item.gd" id="3_g4p1t"]
 [ext_resource type="Texture2D" uid="uid://bnly1gkbxw6b5" path="res://assets/bubble_pattern.png" id="4_xuy0d"]
 [ext_resource type="Texture2D" uid="uid://copkt78vgp37i" path="res://assets/sophia.png" id="5_g5y1a"]
+[ext_resource type="Script" path="res://lessons/dialogue_choice.gd" id="5_qqie7"]
 [ext_resource type="Texture2D" uid="uid://d000xjtr4iqtk" path="res://assets/emotion_regular.png" id="6_bayqr"]
 [ext_resource type="AudioStream" uid="uid://chgko4hmxwxu5" path="res://assets/talking_synth.ogg" id="7_1fga6"]
+
+[sub_resource type="Resource" id="Resource_acm5u"]
+script = ExtResource("5_qqie7")
+text = "Yes!"
+target_line_idx = 1
+is_quit = false
+
+[sub_resource type="Resource" id="Resource_yhkjs"]
+script = ExtResource("5_qqie7")
+text = "No :("
+target_line_idx = 0
+is_quit = true
+
+[sub_resource type="Resource" id="Resource_qdtdb"]
+script = ExtResource("3_g4p1t")
+choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_acm5u"), SubResource("Resource_yhkjs")])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = "Hello! Are you a skibidi sigma?"
+
+[sub_resource type="Resource" id="Resource_qv1yy"]
+script = ExtResource("5_qqie7")
+text = "Yes!"
+target_line_idx = 1
+is_quit = false
+
+[sub_resource type="Resource" id="Resource_ol48c"]
+script = ExtResource("5_qqie7")
+text = " No :("
+target_line_idx = 0
+is_quit = true
+
+[sub_resource type="Resource" id="Resource_50pd6"]
+script = ExtResource("3_g4p1t")
+choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_qv1yy"), SubResource("Resource_ol48c")])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = "Hello! Do you like Godot?"
+
+[sub_resource type="Resource" id="Resource_g656s"]
+script = ExtResource("5_qqie7")
+text = "Yes!"
+target_line_idx = 1
+is_quit = false
+
+[sub_resource type="Resource" id="Resource_pmrnm"]
+script = ExtResource("5_qqie7")
+text = "No :("
+target_line_idx = 0
+is_quit = true
+
+[sub_resource type="Resource" id="Resource_iynra"]
+script = ExtResource("3_g4p1t")
+choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_g656s"), SubResource("Resource_pmrnm")])
+expression = ExtResource("6_bayqr")
+character = ExtResource("5_g5y1a")
+text = "Hello! Do you like Godot?"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efgpg"]
 shader = ExtResource("3_3nfwl")
@@ -24,6 +83,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_frglg")
 script = ExtResource("2_n1q1t")
+dialogue_items = Array[ExtResource("3_g4p1t")]([SubResource("Resource_qdtdb"), SubResource("Resource_50pd6"), SubResource("Resource_iynra")])
 
 [node name="Background" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_efgpg")
