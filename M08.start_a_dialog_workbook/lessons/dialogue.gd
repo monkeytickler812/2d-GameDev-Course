@@ -1,5 +1,11 @@
+@tool
+@icon("res://assets/dialogue_scene_icon.svg")
 extends Control
-@export var dialogue_items: Array[DialogueItem] = []
+
+## An array of dialogue items
+@export var dialogue_items: Array[DialogueItem] = []:
+	set = set_dialogue_items
+
 ## UI element that shows the texts
 @onready var rich_text_label: RichTextLabel = %RichTextLabel
 ## Audio player that plays voice sounds while text is being written
@@ -11,10 +17,10 @@ extends Control
 ## The container for buttons
 @onready var action_buttons_v_box_container: VBoxContainer = %ActionButtonsVBoxContainer
 
-
 func _ready() -> void:
+	if Engine.is_editor_hint():
+		return
 	show_text(0)
-
 
 ## Draws the selected text
 ## [param current_item_index] Displays the currently selected index from the dialogue array
@@ -48,16 +54,7 @@ func show_text(current_item_index: int) -> void:
 	audio_stream_player.play(sound_start_position)
 	# We make sure the sound stops when the text finishes displaying
 	tween.finished.connect(audio_stream_player.stop)
-	
-	# We animate the character sliding in.
 	slide_in()
-	# We disable all buttons until the tween completes
-	for button: Button in action_buttons_v_box_container.get_children():
-		button.disabled = true
-	tween.finished.connect( func() -> void:
-		for button: Button in action_buttons_v_box_container.get_children():
-			button.disabled = false
-	)
 
 
 ## Adds buttons to the buttons container
@@ -67,9 +64,10 @@ func create_buttons(buttons_data: Array[DialogueChoice]) -> void:
 		button.queue_free()
 	for choice in buttons_data:
 		var button := Button.new()
+		button.size_flags_horizontal = Control.SIZE_SHRINK_END
 		action_buttons_v_box_container.add_child(button)
 		button.text = choice.text
-		if choice.is_quit == true:
+		if choice.is_quit:
 			button.pressed.connect(get_tree().quit)
 		else:
 			var target_line_id := choice.target_line_idx
@@ -83,3 +81,15 @@ func slide_in() -> void:
 	slide_tween.tween_property(body, "position:x", 0, 0.3)
 	body.modulate.a = 0
 	slide_tween.parallel().tween_property(body, "modulate:a", 1, 0.2)
+
+func _get_configuration_warnings() -> PackedStringArray:
+	if dialogue_items.is_empty():
+		return ["You need at least one dialogue item for the dialogue system to work."]
+	return []
+
+func set_dialogue_items(new_dialog_items: Array[DialogueItem]) -> void:
+	for index in new_dialog_items.size():
+		if new_dialog_items[index] == null:
+			new_dialog_items[index] = DialogueItem.new()
+	dialogue_items = new_dialog_items
+	update_configuration_warnings()

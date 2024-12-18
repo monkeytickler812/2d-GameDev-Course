@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://chprvwfixox2y"]
+[gd_scene load_steps=19 format=3 uid="uid://chprvwfixox2y"]
 
 [ext_resource type="Theme" uid="uid://cxm3e18skt2lj" path="res://lessons/assets/main_theme.tres" id="1_frglg"]
 [ext_resource type="Script" path="res://lessons/dialogue.gd" id="2_n1q1t"]
@@ -31,13 +31,13 @@ text = "Hello! Are you a skibidi sigma?"
 
 [sub_resource type="Resource" id="Resource_qv1yy"]
 script = ExtResource("5_qqie7")
-text = "Yes!"
-target_line_idx = 1
+text = "2!"
+target_line_idx = 2
 is_quit = false
 
 [sub_resource type="Resource" id="Resource_ol48c"]
 script = ExtResource("5_qqie7")
-text = " No :("
+text = "Math is hard :("
 target_line_idx = 0
 is_quit = true
 
@@ -46,26 +46,20 @@ script = ExtResource("3_g4p1t")
 choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_qv1yy"), SubResource("Resource_ol48c")])
 expression = ExtResource("6_bayqr")
 character = ExtResource("5_g5y1a")
-text = "Hello! Do you like Godot?"
+text = "What the derivative of 2x?"
 
 [sub_resource type="Resource" id="Resource_g656s"]
 script = ExtResource("5_qqie7")
 text = "Yes!"
-target_line_idx = 1
-is_quit = false
-
-[sub_resource type="Resource" id="Resource_pmrnm"]
-script = ExtResource("5_qqie7")
-text = "No :("
 target_line_idx = 0
 is_quit = true
 
 [sub_resource type="Resource" id="Resource_iynra"]
 script = ExtResource("3_g4p1t")
-choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_g656s"), SubResource("Resource_pmrnm")])
+choices = Array[ExtResource("5_qqie7")]([SubResource("Resource_g656s")])
 expression = ExtResource("6_bayqr")
 character = ExtResource("5_g5y1a")
-text = "Hello! Do you like Godot?"
+text = "Is Peery the best teacher?"
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efgpg"]
 shader = ExtResource("3_3nfwl")
