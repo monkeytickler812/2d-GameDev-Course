@@ -1,57 +1,5 @@
 extends Control
-
-var expressions := {
-	"happy": preload ("res://assets/emotion_happy.png"),
-	"regular": preload ("res://assets/emotion_regular.png"),
-	"sad": preload ("res://assets/emotion_sad.png"),
-}
-
-var bodies := {
-	"sophia": preload ("res://assets/sophia.png"),
-	"pink": preload ("res://assets/pink.png")
-}
-
-## An array of dictionaries. Each dictionary has three properties:
-## - expression: a [code]Texture[/code] containing an expression
-## - text: a [code]String[/code] containing the text the character says
-## - character: a [code]Texture[/code] representing the character
-var dialogue_items: Array[Dictionary] = [
-	{
-		"expression": expressions["regular"],
-		"text": "I've been learning about [wave]Arrays and Dictionaries[/wave]",
-		"character": bodies["sophia"]
-	},
-	{
-		"expression": expressions["regular"],
-		"text": "How has it been going?",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["sad"],
-		"text": "... Well... it is a little bit [shake]complicated[/shake]!",
-		"character": bodies["sophia"]
-	},
-	{
-		"expression": expressions["sad"],
-		"text": "Oh!",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["regular"],
-		"text": "I believe in you!",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["happy"],
-		"text": "If you stick to it, you'll eventually make it!",
-		"character": bodies["pink"]
-	},
-	{
-		"expression": expressions["happy"],
-		"text": "That's it! Let's [tornado freq=3.0][rainbow val=1.0]GOOOOOO!!![/rainbow][/tornado]",
-		"character": bodies["sophia"]
-	}
-]
+@export var dialogue_items: Array[SlideShowEntry] = []
 var current_item_index := 0
 
 ## UI element that shows the texts
@@ -63,13 +11,12 @@ var current_item_index := 0
 ## The character
 @onready var body: TextureRect = %Body
 ## The Expression
-@onready var expression_texture_rect: TextureRect = %Expression
+@onready var expression: TextureRect = %Expression
 
 
 func _ready() -> void:
 	show_text()
 	next_button.pressed.connect(advance)
-
 
 ## Draws the current text to the rich text element
 func show_text() -> void:
@@ -78,10 +25,9 @@ func show_text() -> void:
 	# from the item, we extract the properties.
 	# We set the text to the rich text control
 	# And we set the appropriate expression texture
-	rich_text_label.text = current_item["text"]
-	expression_texture_rect.texture = current_item["expression"]
-	body.texture = current_item["character"]
-
+	rich_text_label.text = current_item.text
+	expression.texture = current_item.expression
+	body.texture = current_item.character
 	# We set the initial visible ratio to the text to 0, so we can change it in the tween
 	rich_text_label.visible_ratio = 0.0
 	# We create a tween that will draw the text
@@ -89,7 +35,7 @@ func show_text() -> void:
 	# A variable that holds the amount of time for the text to show, in seconds
 	# We could write this directly in the tween call, but this is clearer.
 	# We will also use this for deciding on the sound length
-	var text_appearing_duration: float = current_item["text"].length() / 30.0
+	var text_appearing_duration := (current_item["text"] as String).length() / 30.0
 	# We show the text slowly
 	tween.tween_property(rich_text_label, "visible_ratio", 1.0, text_appearing_duration)
 	# We randomize the audio playback's start time to make it sound different
@@ -102,15 +48,7 @@ func show_text() -> void:
 	audio_stream_player.play(sound_start_position)
 	# We make sure the sound stops when the text finishes displaying
 	tween.finished.connect(audio_stream_player.stop)
-
-	# We animate the character sliding in.
 	slide_in()
-
-	# Finally, we disable the next button until the text finishes displaying.
-	next_button.disabled = true
-	tween.finished.connect(func() -> void:
-		next_button.disabled = false
-	)
 
 
 ## Progresses to the next slide.
