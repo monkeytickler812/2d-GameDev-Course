@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3]
 
-[ext_resource type="Script" path="res://practices/L2.P1.asteroid_field/moving_ship.gd" id="1_mrd7g"]
+[ext_resource type="Script" path="res://practices/L2.P1.asteroid_field/moving_ship.gd" id="1_jruww"]
 [ext_resource type="Texture2D" path="res://assets/practice_assets/shape_ship.png" id="2_52w8f"]
 [ext_resource type="Texture2D" path="res://assets/practice_assets/ellipse_white.png" id="3_ldf5h"]
 
@@ -21,7 +21,7 @@ scale_curve = SubResource("CurveTexture_gyk3c")
 radius = 52.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_mrd7g")
+script = ExtResource("1_jruww")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_52w8f")
