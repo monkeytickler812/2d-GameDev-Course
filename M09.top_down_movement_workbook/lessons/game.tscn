@@ -78,3 +78,15 @@ position = Vector2(2461, 684)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_tjs2p")]
 position = Vector2(2992, 849)
+
+[node name="SimpleObstacle4" parent="." instance=ExtResource("2_tjs2p")]
+position = Vector2(3451, 1382)
+
+[node name="SimpleObstacle5" parent="." instance=ExtResource("2_tjs2p")]
+position = Vector2(2975, 2174)
+
+[node name="SimpleObstacle6" parent="." instance=ExtResource("2_tjs2p")]
+position = Vector2(2136, 1406)
+
+[node name="SimpleObstacle7" parent="." instance=ExtResource("2_tjs2p")]
+position = Vector2(1537, 1833)
