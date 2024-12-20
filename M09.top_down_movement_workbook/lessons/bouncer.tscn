@@ -91,9 +91,17 @@ unique_name_in_owner = true
 position = Vector2(0, -34)
 
 [node name="RayCast2D" type="RayCast2D" parent="Raycasts"]
-rotation = 0.805993
+rotation = 0.563135
 target_position = Vector2(100, 0)
 
 [node name="RayCast2D2" type="RayCast2D" parent="Raycasts"]
-rotation = 2.3504
+rotation = 2.59893
+target_position = Vector2(100, 0)
+
+[node name="RayCast2D3" type="RayCast2D" parent="Raycasts"]
+rotation = 2.13319
+target_position = Vector2(100, 0)
+
+[node name="RayCast2D4" type="RayCast2D" parent="Raycasts"]
+rotation = 0.996306
 target_position = Vector2(100, 0)

@@ -77,4 +77,4 @@ position = Vector2(1923, 577)
 position = Vector2(2461, 684)
 
 [node name="SimpleObstacle3" parent="." instance=ExtResource("2_tjs2p")]
-position = Vector2(3044, 861)
+position = Vector2(2992, 849)
