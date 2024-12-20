@@ -3,40 +3,43 @@
 [ext_resource type="PackedScene" uid="uid://be4o4t7xst17m" path="res://lessons/runner.tscn" id="1_f3duu"]
 [ext_resource type="Script" path="res://lessons/game.gd" id="1_un34e"]
 [ext_resource type="Texture2D" uid="uid://5vl7p0xb7nd8" path="res://assets/circuit_background.png" id="1_yad3n"]
-[ext_resource type="PackedScene" uid="uid://sy4gm0c4mooa" path="res://lessons/simple_obstacle.tscn" id="2_tjs2p"]
 [ext_resource type="PackedScene" uid="uid://45bg26t1s6hs" path="res://lessons/circuit.tscn" id="4_plnoo"]
 [ext_resource type="PackedScene" uid="uid://xl56q8amb611" path="res://assets/finish_line/finish_line.tscn" id="5_p2fie"]
 [ext_resource type="Theme" uid="uid://cdcyvsn1fp8wa" path="res://assets/countdown/count_down_theme.tres" id="7_um2w4"]
 [ext_resource type="Script" path="res://assets/countdown/count_down.gd" id="8_q5wx5"]
+[ext_resource type="PackedScene" uid="uid://74j4ynwmav7d" path="res://lessons/pause_screen.tscn" id="9_qmqfx"]
 
 [node name="Game" type="Node2D"]
+process_mode = 3
 y_sort_enabled = true
 script = ExtResource("1_un34e")
 
-[node name="SimpleObstacle" parent="." instance=ExtResource("2_tjs2p")]
-position = Vector2(2886, 1772)
-
-[node name="Runner" parent="." instance=ExtResource("1_f3duu")]
-unique_name_in_owner = true
-position = Vector2(1920, 768)
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CircuitBackground" type="Sprite2D" parent="."]
+process_mode = 1
 z_index = -1
 position = Vector2(2048, 1536)
 texture = ExtResource("1_yad3n")
 
-[node name="Circuit" parent="." instance=ExtResource("4_plnoo")]
-position = Vector2(2048, 1536)
-
 [node name="FinishLine" parent="." instance=ExtResource("5_p2fie")]
 unique_name_in_owner = true
+process_mode = 1
 position = Vector2(704, 1336)
 area_width = 256
+
+[node name="Runner" parent="." instance=ExtResource("1_f3duu")]
+unique_name_in_owner = true
+process_mode = 1
+position = Vector2(1920, 768)
+
+[node name="Circuit" parent="." instance=ExtResource("4_plnoo")]
+process_mode = 1
+position = Vector2(2048, 1536)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="CountDown" type="Label" parent="CanvasLayer"]
 unique_name_in_owner = true
+process_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -55,3 +58,6 @@ text = "test"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("8_q5wx5")
+
+[node name="PauseScreen" parent="CanvasLayer" instance=ExtResource("9_qmqfx")]
+visible = false
